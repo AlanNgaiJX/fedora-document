@@ -2,13 +2,21 @@
 /*
  * @Author: your name
  * @Date: 2021-03-15 12:02:30
- * @LastEditTime: 2021-03-15 12:13:14
+ * @LastEditTime: 2021-03-17 00:21:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /fedora-document/src/common/hljsPlugin.js
  */
 import { defineComponent, h } from 'vue';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import xml from 'highlight.js/lib/languages/xml';
+import scss from 'highlight.js/lib/languages/scss';
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('scss', scss);
+
 
 /**
  * @param {string} value

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-14 21:18:18
- * @LastEditTime: 2021-03-15 14:22:36
+ * @LastEditTime: 2021-03-17 02:23:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /fedora-document/src/router/index.js
@@ -74,6 +74,18 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 };
+  },
+});
+
+router.beforeEach((to, from, next) => {
+  const pageView = document.querySelector('.page-router-view');
+  if (pageView) {
+    pageView.scrollTo({ top: 0 });
+  }
+  next();
 });
 
 export default router;

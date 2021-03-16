@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-15 00:52:38
- * @LastEditTime: 2021-03-16 14:45:37
+ * @LastEditTime: 2021-03-16 23:52:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /fedora-document/src/pages/Start.vue
@@ -52,10 +52,11 @@ const partImport = `  // 引入 组件
   // 引入样式
   import 'fedora-ui/dist/fedora.css';
 
-  //  使用组件（注意，Modal是一个插件）
+  // 使用组件（注意，Modal是一个插件）
   createApp(App)
-    .component(Button.name, Button)
-    .component(Select.name, Select).use(Modal)
+    .use(Button)
+    .use(Select)
+    .use(Modal)
     .mount('#app');`;
 </script>
 
